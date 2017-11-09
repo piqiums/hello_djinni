@@ -5,14 +5,17 @@
 namespace helloworld {
     
     class HelloWorldImpl : public helloworld::HelloWorld {
-        
+    protected:
+		std::string msg;
+	
     public:
         
         // Constructor
         HelloWorldImpl();
         
         // Our method that returns a string
-        std::string get_hello_world();
+        std::string get_msg();
+		void set_msg(const std::string & msg);
         
     };
     

@@ -9,6 +9,8 @@
 
 + (nullable HWHelloWorld *)create;
 
-- (nonnull NSString *)getHelloWorld;
+- (nonnull NSString *)getMsg;
+
+- (void)setMsg:(nonnull NSString *)msg;
 
 @end

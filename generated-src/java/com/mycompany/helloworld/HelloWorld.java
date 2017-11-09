@@ -6,7 +6,9 @@ package com.mycompany.helloworld;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public abstract class HelloWorld {
-    public abstract String getHelloWorld();
+    public abstract String getMsg();
+
+    public abstract void setMsg(String msg);
 
     public static native HelloWorld create();
 
@@ -34,11 +36,19 @@ public abstract class HelloWorld {
         }
 
         @Override
-        public String getHelloWorld()
+        public String getMsg()
         {
             assert !this.destroyed.get() : "trying to use a destroyed object";
-            return native_getHelloWorld(this.nativeRef);
+            return native_getMsg(this.nativeRef);
         }
-        private native String native_getHelloWorld(long _nativeRef);
+        private native String native_getMsg(long _nativeRef);
+
+        @Override
+        public void setMsg(String msg)
+        {
+            assert !this.destroyed.get() : "trying to use a destroyed object";
+            native_setMsg(this.nativeRef, msg);
+        }
+        private native void native_setMsg(long _nativeRef, String msg);
     }
 }

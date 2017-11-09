@@ -2,7 +2,7 @@
 #include <string>
  
 namespace helloworld {
-    
+
     std::shared_ptr<HelloWorld> HelloWorld::create() {
         return std::make_shared<HelloWorldImpl>();
     }
@@ -10,10 +10,16 @@ namespace helloworld {
     HelloWorldImpl::HelloWorldImpl() {
  
     }
-    
-    std::string HelloWorldImpl::get_hello_world() {
+
+		
+	void HelloWorldImpl::set_msg(const std::string& arg) {
+		msg = arg;
+	}
         
-        std::string myString = "Hello World! from Djinni C++";
+    
+    std::string HelloWorldImpl::get_msg() {
+        
+        std::string myString = msg;
         
         time_t t = time(0);
         tm now=*localtime(&t);

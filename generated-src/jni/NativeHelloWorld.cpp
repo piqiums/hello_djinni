@@ -28,14 +28,23 @@ CJNIEXPORT jobject JNICALL Java_com_mycompany_helloworld_HelloWorld_create(JNIEn
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }
 
-CJNIEXPORT jstring JNICALL Java_com_mycompany_helloworld_HelloWorld_00024CppProxy_native_1getHelloWorld(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
+CJNIEXPORT jstring JNICALL Java_com_mycompany_helloworld_HelloWorld_00024CppProxy_native_1getMsg(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
 {
     try {
         DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
         const auto& ref = ::djinni::objectFromHandleAddress<::helloworld::HelloWorld>(nativeRef);
-        auto r = ref->get_hello_world();
+        auto r = ref->get_msg();
         return ::djinni::release(::djinni::String::fromCpp(jniEnv, r));
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
+}
+
+CJNIEXPORT void JNICALL Java_com_mycompany_helloworld_HelloWorld_00024CppProxy_native_1setMsg(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jstring j_msg)
+{
+    try {
+        DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
+        const auto& ref = ::djinni::objectFromHandleAddress<::helloworld::HelloWorld>(nativeRef);
+        ref->set_msg(::djinni::String::toCpp(jniEnv, j_msg));
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
 }
 
 }  // namespace djinni_generated

@@ -14,7 +14,9 @@ public:
 
     static std::shared_ptr<HelloWorld> create();
 
-    virtual std::string get_hello_world() = 0;
+    virtual std::string get_msg() = 0;
+
+    virtual void set_msg(const std::string & msg) = 0;
 };
 
 }  // namespace helloworld

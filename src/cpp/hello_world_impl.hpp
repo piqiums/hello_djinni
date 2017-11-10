@@ -6,10 +6,9 @@ namespace helloworld {
     
     class HelloWorldImpl : public helloworld::HelloWorld {
     protected:
-		std::string msg;
+        std::string msg;
 	
     public:
-        
         // Constructor
         HelloWorldImpl();
         

@@ -11,14 +11,12 @@ namespace helloworld {
  
     }
 
-		
-	void HelloWorldImpl::set_msg(const std::string& arg) {
-		msg = arg;
-	}
+    void HelloWorldImpl::set_msg(const std::string& arg) {
+        msg = arg;
+    }
         
     
     std::string HelloWorldImpl::get_msg() {
-        
         std::string myString = msg;
         
         time_t t = time(0);
@@ -30,7 +28,6 @@ namespace helloworld {
         }
         
         return myString;
-        
     }
     
 }

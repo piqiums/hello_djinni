@@ -14,7 +14,7 @@ namespace helloworld {
         
         // Our method that returns a string
         std::string get_msg();
-		void set_msg(const std::string & msg);
+        void set_msg(const std::string & msg);
         
     };
     
